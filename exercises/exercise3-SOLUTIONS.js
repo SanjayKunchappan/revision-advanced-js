@@ -1,10 +1,10 @@
 // change everything below to the newer Javascript!
 
 // let + const
-let a = 'test';
-const b = true;
-const c = 789;
-a = 'test2';
+let a1 = 'test';
+const b1 = true;
+const c1 = 789;
+a1 = 'test2';
 
 
 // Destructuring
