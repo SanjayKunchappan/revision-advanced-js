@@ -62,6 +62,8 @@ const compose = (f,g) => (a) => f(g(a));
 const sum = (num) => num+1;
 compose(sum, sum)(5);
 
+
+
 //compose(sum, sum)(5);// in this, f & g are sum and a is 5
 // const compose = (f,g) => (5) => f(g(5));
 // now calculating g(5) and g is sum
@@ -85,6 +87,6 @@ compose(sum, sum)(5);
 // and we always want a "return"
 
 // by always returning something and avoiding side-effects
-// we create something called deterministic
+// we create something called DETERMINISTIC
 // no matter what, if we give same inputs we get same output every time
 // and we won't get random errors here and there
