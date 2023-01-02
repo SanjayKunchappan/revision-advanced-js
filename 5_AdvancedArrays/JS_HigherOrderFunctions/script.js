@@ -57,6 +57,14 @@ const canDrive = ages.filter( age => age > 18 ); // ages.filter((age)=> {return 
 console.log(canDrive);
 
 //filter retail companies
+const retailCompanies1 = companies.filter(function(company){
+    if (company.category==="Retail"){
+        return true;
+    });
+console.log(retailCompanies1); //retailCompanies is filtered array containing companies whose category is retail
+
+//same code in one line
+//filter retail companies
 const retailCompanies = companies.filter(company=>company.category==="Retail");
 console.log(retailCompanies); //retailCompanies is filtered array containing companies whose category is retail
 
