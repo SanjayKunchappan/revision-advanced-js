@@ -83,9 +83,48 @@ const eightiesCompaniesShort = companies.filter(company=>company.start<1990&&com
 console.log(eightiesCompaniesShort);
 
 
+//get companies that lasted more than 10 years
+const companiesLastingTenYears = companies.filter(company=>company.end-company.start>=10);
+console.log("Companies Lasting more than 10 years", companiesLastingTenYears);
+
 
 //map
 //===
+//instead of filtering things out, we can create new arrays from the current array based on given criteria
+
+
+//create array of company names
+
+const companyNames = companies.map(function(company){
+    return company.name;
+});
+
+console.log(companyNames);
+
+const testMap = companies.map(function(company){
+    return `${company.name} [${company.start} - ${company.end}]`;
+});
+console.log(testMap);
+// this would have an array of elements in the format Company One [1980 - 1983]
+
+//in shorthand, 
+const ShortTestMap = companies.map(company => `${company.name} [${company.start} - ${company.end}] (${company.category})`);
+console.log(ShortTestMap);
+
+//squareroot all ages
+const agesSquare = ages.map (age => Math.sqrt(age));
+console.log(agesSquare);
+//ages * 2
+const agesTimesTwo = ages.map (age => age*2);
+console.log(agesTimesTwo);
+//applying 2 maps one after another
+
+const agesMinusFiveDoubled = ages
+    .map(age=>age-5)
+    .map(age=>age*2);
+//first -5 then multiplied by two
+console.log(agesMinusFiveDoubled);
+
 
 //sort
 //====
