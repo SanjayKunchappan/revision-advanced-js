@@ -60,13 +60,27 @@ console.log(canDrive);
 const retailCompanies1 = companies.filter(function(company){
     if (company.category==="Retail"){
         return true;
-    });
+    }
+});
 console.log(retailCompanies1); //retailCompanies is filtered array containing companies whose category is retail
 
 //same code in one line
 //filter retail companies
 const retailCompanies = companies.filter(company=>company.category==="Retail");
 console.log(retailCompanies); //retailCompanies is filtered array containing companies whose category is retail
+
+//get 80s companies
+const eightiesCompaniesLong = companies.filter(
+    function(company){
+        if(company.start<1990&&company.start>=1980) {
+            return true;
+        }
+    }
+);
+console.log(eightiesCompaniesLong);
+
+const eightiesCompaniesShort = companies.filter(company=>company.start<1990&&company.start>=1980);
+console.log(eightiesCompaniesShort);
 
 
 
