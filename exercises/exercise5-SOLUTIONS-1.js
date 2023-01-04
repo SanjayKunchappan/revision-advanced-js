@@ -34,7 +34,7 @@ array.forEach(user => {
 	username = username + "!";
 	newArray1.push(username);
 })
-console.log(newArray);
+console.log(newArray1);
 
 //Create an array using map that has all the usernames with a "?" at the end of usernames
 const mapArray = array.map(user => {
