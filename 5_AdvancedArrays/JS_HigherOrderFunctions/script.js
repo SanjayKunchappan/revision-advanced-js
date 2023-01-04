@@ -29,6 +29,9 @@ companies.forEach((company)=>{
 
 
 
+
+
+
 //filter
 //======
 // - filter allows us to filter things out from the array
@@ -88,6 +91,11 @@ const companiesLastingTenYears = companies.filter(company=>company.end-company.s
 console.log("Companies Lasting more than 10 years", companiesLastingTenYears);
 
 
+
+
+
+
+
 //map
 //===
 //instead of filtering things out, we can create new arrays from the current array based on given criteria
@@ -126,8 +134,77 @@ const agesMinusFiveDoubled = ages
 console.log(agesMinusFiveDoubled);
 
 
+
+
+
+
+
 //sort
 //====
 
+//sort companies by start year
+
+const sortedCompanies = companies.sort(function(c1, c2){
+    if (c1.start > c2.start) {
+        return 1;
+    }
+    else {
+        return -1;
+    } 
+});
+console.log(sortedCompanies);
+
+const sortedCompaniesShort = companies.sort((a,b)=>(a.start>b.start?1:-1));
+console.log(sortedCompaniesShort);
+
+
+//sort ages from lowest to highest
+const sortAges = ages.sort((a,b)=> a-b); 
+//if we leave the function empty, it'll still sort
+//but will only compare the first digits
+//and will not sort properly in case there are more digits
+console.log(sortAges);
+
+
+
+
 //reduce
 //======
+
+//add all ages together
+
+//first using for loop
+let ageSum = 0;
+for (let i=0; i<ages.length; i++){
+    ageSum = ageSum + ages[i];
+}    
+console.log(ageSum);
+
+//using reduce
+const reduceAgeSum = ages.reduce(function (total, age){
+    return total + age ;
+},0);
+console.log(reduceAgeSum);
+//using arrow functions
+
+const reduceAgeSum2 = ages.reduce( (total, age) =>  total + age ,0);
+console.log(reduceAgeSum2);
+
+
+
+//get total years for all companies
+
+const totalYears = companies.reduce((total, company)=> total + (company.end - company.start), 0 );
+
+
+
+const newAges = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+
+//using combined methods
+const combined = newAges
+    .map(age => age*2)
+    .sort( (a,b)=> a - b )
+    .reduce( (total, a) => total +  a, 0 );
+
+
+console.log(combined);
